@@ -51,9 +51,9 @@ jobs:
           scribe-enable: true
           product-key: $APP_NAME
           product-version: v0.49.0$GITHUB_RUN_NUM
-          scribe.login-url: $LOGIN-URL
-          scribe.auth-audience: $SCRIBE_AUDIENCE
-          scribe.url: $SCRIBE_URL
+          scribe-login-url: $LOGIN-URL
+          scribe-auth-audience: $SCRIBE_AUDIENCE
+          scribe-url: $SCRIBE_URL
           scribe-client-id: ${{ secrets.SCRIBE_DEV_M2M_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_M2M_CLIENT_SECRET }}
           components: packages,files,dep
