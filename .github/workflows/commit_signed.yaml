@@ -57,4 +57,5 @@ jobs:
           components: packages,files,dep
           format: attest
           label: is_git_commit
+          force: true
       
