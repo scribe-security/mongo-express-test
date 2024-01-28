@@ -41,8 +41,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ref: v0.52.2
+       # with:
+       #   ref: v0.52.2
      
 
       - name: Generate signed SBOM for repo content clone
