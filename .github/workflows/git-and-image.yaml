@@ -12,7 +12,7 @@ env:
   VALINT_BOM_SUPPLIER_PHONE: 001-001-0011
   INTEGRATION_TEST: 15s
   GITHUB_RUN_NUM: ${{ github.run_number }}
-  
+  THIS_VER: 0.49.0  
   LOGIN-URL: https://scribe-hub-dev.us.auth0.com
   # LOGIN-URL: https://scribe-hub-production.us.auth0.com
          
@@ -41,6 +41,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: v$THIS_VER
      
 
       - name: Generate signed SBOM for repo content clone
@@ -49,7 +51,7 @@ jobs:
           target: "git:."
           scribe-enable: true
           product-key: $APP_NAME
-          product-version: v0.49.0
+          product-version: v$THIS_VER
           scribe-login-url: $LOGIN-URL
           scribe-auth-audience: $SCRIBE_AUDIENCE
           scribe-url: $SCRIBE_URL
@@ -59,15 +61,15 @@ jobs:
           format: attest
           force: true
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag mongo-a:v0.49.0 
+        run: docker build . --file Dockerfile --tag mongo-a:v$THIS_VER
 
       - name: Generate signed image SBOM
         uses: scribe-security/action-bom@master #ec2962f8ef167c7ae7541c14a514982e73ef4d80 # pin@master
         with:
-          target: "mongo-a:v0.49.0"
+          target: "mongo-a:v$THIS_VER"
           scribe-enable: true
           product-key: $APP_NAME
-          product-version: v0.49.0
+          product-version: v$THIS_VER
           scribe-login-url: $LOGIN-URL
           scribe-auth-audience: $SCRIBE_AUDIENCE
           scribe-url: $SCRIBE_URL
