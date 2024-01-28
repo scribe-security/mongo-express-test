@@ -43,7 +43,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-           ref: v$THIS_VER
+           ref: $THIS_VER
        
 
       - name: Generate signed SBOM for git commit
