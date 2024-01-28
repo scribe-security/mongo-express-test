@@ -16,7 +16,7 @@ env:
   LOGIN-URL: https://scribe-hub-dev.us.auth0.com
   # LOGIN-URL: https://scribe-hub-production.us.auth0.com
          
-  SCRIBE_AUDIENCE: : api.dev.scribesecurity.com
+  SCRIBE_AUDIENCE: api.dev.scribesecurity.com
   # SCRIBE_AUDIENCE: api.production.scribesecurity.com
   
   SCRIBE_URL: https://api.dev.scribesecurity.com
