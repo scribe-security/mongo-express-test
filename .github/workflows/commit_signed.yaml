@@ -45,6 +45,7 @@ jobs:
           product-version: v0.49.0$GITHUB_RUN_NUM
           scribe-client-id: ${{ secrets.SCRIBE_DEV_M2M_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_M2M_CLIENT_SECRET }}
+          config: .valint.yamk
           components: packages,files,dep
           format: attest
           label: is_git_commit
