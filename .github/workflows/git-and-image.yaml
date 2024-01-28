@@ -57,6 +57,7 @@ jobs:
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_M2M_CLIENT_SECRET }}
           components: packages,files,dep
           format: attest
+          force: true
 
       - name: Generate signed image SBOM
         uses: scribe-security/action-bom@master #ec2962f8ef167c7ae7541c14a514982e73ef4d80 # pin@master
@@ -71,4 +72,5 @@ jobs:
           scribe-client-id: ${{ secrets.SCRIBE_DEV_M2M_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_M2M_CLIENT_SECRET }}
           format: attest
+          force: true
       
