@@ -1,8 +1,7 @@
 name: commit-signed
 
 env:
-  DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
-  IMAGE_NAME: ${{ github.repository }}:${{ github.sha }}
+  
   APP_NAME: Mongo-Express
   VALINT_BOM_AUTHOR_NAME: Guy-Chernobrov
   VALINT_BOM_AUTHOR_EMAIL: gc@scribesecurity.com
@@ -32,7 +31,7 @@ jobs:
       id-token: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
            ref: v0.49.0
 
