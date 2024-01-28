@@ -62,7 +62,7 @@ jobs:
       - name: Generate signed image SBOM
         uses: scribe-security/action-bom@master #ec2962f8ef167c7ae7541c14a514982e73ef4d80 # pin@master
         with:
-          target: docker:mongo-express:v0.49.0
+          target: mongo-express:0.49.0
           scribe-enable: true
           product-key: $APP_NAME
           product-version: v0.49.0
