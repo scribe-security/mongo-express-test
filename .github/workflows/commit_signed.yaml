@@ -41,8 +41,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-           ref: v0.49.0
+       
 
       - name: Generate signed SBOM for git commit
         uses: scribe-security/action-bom@master #ec2962f8ef167c7ae7541c14a514982e73ef4d80 # pin@master
